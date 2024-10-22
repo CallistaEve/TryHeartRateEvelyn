@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FA4D00972CC7426A00B431B3 /* TryHeartRateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D00962CC7426A00B431B3 /* TryHeartRateApp.swift */; };
-		FA4D00992CC7426A00B431B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D00982CC7426A00B431B3 /* ContentView.swift */; };
 		FA4D009B2CC7426B00B431B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA4D009A2CC7426B00B431B3 /* Assets.xcassets */; };
 		FA4D009E2CC7426B00B431B3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA4D009D2CC7426B00B431B3 /* Preview Assets.xcassets */; };
 		FA4D00A82CC7426B00B431B3 /* TryHeartRateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D00A72CC7426B00B431B3 /* TryHeartRateTests.swift */; };
@@ -16,12 +15,15 @@
 		FA4D00B42CC7426B00B431B3 /* TryHeartRateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D00B32CC7426B00B431B3 /* TryHeartRateUITestsLaunchTests.swift */; };
 		FA4D00BA2CC7426B00B431B3 /* TryHeartRate Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FA4D00B92CC7426B00B431B3 /* TryHeartRate Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FA4D00BF2CC7426B00B431B3 /* TryHeartRateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D00BE2CC7426B00B431B3 /* TryHeartRateApp.swift */; };
-		FA4D00C12CC7426B00B431B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D00C02CC7426B00B431B3 /* ContentView.swift */; };
 		FA4D00C32CC7426C00B431B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA4D00C22CC7426C00B431B3 /* Assets.xcassets */; };
 		FA4D00C62CC7426C00B431B3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA4D00C52CC7426C00B431B3 /* Preview Assets.xcassets */; };
 		FA4D00D02CC7426C00B431B3 /* TryHeartRate_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D00CF2CC7426C00B431B3 /* TryHeartRate_Watch_AppTests.swift */; };
 		FA4D00DA2CC7426C00B431B3 /* TryHeartRate_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D00D92CC7426C00B431B3 /* TryHeartRate_Watch_AppUITests.swift */; };
 		FA4D00DC2CC7426C00B431B3 /* TryHeartRate_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D00DB2CC7426C00B431B3 /* TryHeartRate_Watch_AppUITestsLaunchTests.swift */; };
+		FADF01262CC757420095BE7C /* ContentViewWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF01252CC757420095BE7C /* ContentViewWatch.swift */; };
+		FADF01282CC7574C0095BE7C /* WatchConnectivityManagerWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF01272CC7574C0095BE7C /* WatchConnectivityManagerWatch.swift */; };
+		FADF012A2CC757570095BE7C /* WatchConnectivityManagerPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF01292CC757570095BE7C /* WatchConnectivityManagerPhone.swift */; };
+		FADF012C2CC7575D0095BE7C /* ContentViewPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF012B2CC7575D0095BE7C /* ContentViewPhone.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +81,6 @@
 /* Begin PBXFileReference section */
 		FA4D00932CC7426A00B431B3 /* TryHeartRate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TryHeartRate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA4D00962CC7426A00B431B3 /* TryHeartRateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryHeartRateApp.swift; sourceTree = "<group>"; };
-		FA4D00982CC7426A00B431B3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA4D009A2CC7426B00B431B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA4D009D2CC7426B00B431B3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FA4D00A32CC7426B00B431B3 /* TryHeartRateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TryHeartRateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,7 +90,6 @@
 		FA4D00B32CC7426B00B431B3 /* TryHeartRateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryHeartRateUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FA4D00B92CC7426B00B431B3 /* TryHeartRate Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TryHeartRate Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA4D00BE2CC7426B00B431B3 /* TryHeartRateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryHeartRateApp.swift; sourceTree = "<group>"; };
-		FA4D00C02CC7426B00B431B3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA4D00C22CC7426C00B431B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA4D00C52CC7426C00B431B3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FA4D00CB2CC7426C00B431B3 /* TryHeartRate Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TryHeartRate Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +97,13 @@
 		FA4D00D52CC7426C00B431B3 /* TryHeartRate Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TryHeartRate Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA4D00D92CC7426C00B431B3 /* TryHeartRate_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryHeartRate_Watch_AppUITests.swift; sourceTree = "<group>"; };
 		FA4D00DB2CC7426C00B431B3 /* TryHeartRate_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryHeartRate_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FA4D00F22CC7427C00B431B3 /* TryHeartRate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TryHeartRate.entitlements; sourceTree = "<group>"; };
+		FA4D00FB2CC74DEC00B431B3 /* TryHeartRate Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TryHeartRate Watch App.entitlements"; sourceTree = "<group>"; };
+		FA4D00FC2CC74EC900B431B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FADF01252CC757420095BE7C /* ContentViewWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewWatch.swift; sourceTree = "<group>"; };
+		FADF01272CC7574C0095BE7C /* WatchConnectivityManagerWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchConnectivityManagerWatch.swift; sourceTree = "<group>"; };
+		FADF01292CC757570095BE7C /* WatchConnectivityManagerPhone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchConnectivityManagerPhone.swift; sourceTree = "<group>"; };
+		FADF012B2CC7575D0095BE7C /* ContentViewPhone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewPhone.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,8 +181,11 @@
 		FA4D00952CC7426A00B431B3 /* TryHeartRate */ = {
 			isa = PBXGroup;
 			children = (
+				FA4D00FC2CC74EC900B431B3 /* Info.plist */,
+				FA4D00F22CC7427C00B431B3 /* TryHeartRate.entitlements */,
+				FADF012B2CC7575D0095BE7C /* ContentViewPhone.swift */,
 				FA4D00962CC7426A00B431B3 /* TryHeartRateApp.swift */,
-				FA4D00982CC7426A00B431B3 /* ContentView.swift */,
+				FADF01292CC757570095BE7C /* WatchConnectivityManagerPhone.swift */,
 				FA4D009A2CC7426B00B431B3 /* Assets.xcassets */,
 				FA4D009C2CC7426B00B431B3 /* Preview Content */,
 			);
@@ -210,8 +220,10 @@
 		FA4D00BD2CC7426B00B431B3 /* TryHeartRate Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				FA4D00FB2CC74DEC00B431B3 /* TryHeartRate Watch App.entitlements */,
+				FADF01272CC7574C0095BE7C /* WatchConnectivityManagerWatch.swift */,
 				FA4D00BE2CC7426B00B431B3 /* TryHeartRateApp.swift */,
-				FA4D00C02CC7426B00B431B3 /* ContentView.swift */,
+				FADF01252CC757420095BE7C /* ContentViewWatch.swift */,
 				FA4D00C22CC7426C00B431B3 /* Assets.xcassets */,
 				FA4D00C42CC7426C00B431B3 /* Preview Content */,
 			);
@@ -465,8 +477,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA4D00992CC7426A00B431B3 /* ContentView.swift in Sources */,
 				FA4D00972CC7426A00B431B3 /* TryHeartRateApp.swift in Sources */,
+				FADF012A2CC757570095BE7C /* WatchConnectivityManagerPhone.swift in Sources */,
+				FADF012C2CC7575D0095BE7C /* ContentViewPhone.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,7 +504,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA4D00C12CC7426B00B431B3 /* ContentView.swift in Sources */,
+				FADF01262CC757420095BE7C /* ContentViewWatch.swift in Sources */,
+				FADF01282CC7574C0095BE7C /* WatchConnectivityManagerWatch.swift in Sources */,
 				FA4D00BF2CC7426B00B431B3 /* TryHeartRateApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -663,6 +677,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "TryHeartRate Watch App/TryHeartRate Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TryHeartRate Watch App/Preview Content\"";
@@ -670,6 +685,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = TryHeartRate;
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "This app requires access to worka";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This app require permission to access healthdata";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "This app requires permission to work";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = appledeveloperacademy.TryHeartRate;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -693,6 +711,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "TryHeartRate Watch App/TryHeartRate Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TryHeartRate Watch App/Preview Content\"";
@@ -700,6 +719,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = TryHeartRate;
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "This app requires access to worka";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This app require permission to access healthdata";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "This app requires permission to work";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = appledeveloperacademy.TryHeartRate;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -725,13 +747,19 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TryHeartRate/TryHeartRate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TryHeartRate/Preview Content\"";
 				DEVELOPMENT_TEAM = 5H7J7YUY92;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TryHeartRate/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TryHeartRate;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "This app requires access to worka";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This app requires permission to access user health data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "This app requires permission to work";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -758,13 +786,19 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TryHeartRate/TryHeartRate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TryHeartRate/Preview Content\"";
 				DEVELOPMENT_TEAM = 5H7J7YUY92;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TryHeartRate/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TryHeartRate;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "This app requires access to worka";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This app requires permission to access user health data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "This app requires permission to work";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
