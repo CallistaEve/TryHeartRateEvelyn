@@ -20,10 +20,10 @@
 		FA4D00D02CC7426C00B431B3 /* TryHeartRate_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D00CF2CC7426C00B431B3 /* TryHeartRate_Watch_AppTests.swift */; };
 		FA4D00DA2CC7426C00B431B3 /* TryHeartRate_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D00D92CC7426C00B431B3 /* TryHeartRate_Watch_AppUITests.swift */; };
 		FA4D00DC2CC7426C00B431B3 /* TryHeartRate_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D00DB2CC7426C00B431B3 /* TryHeartRate_Watch_AppUITestsLaunchTests.swift */; };
-		FADF01262CC757420095BE7C /* ContentViewWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF01252CC757420095BE7C /* ContentViewWatch.swift */; };
-		FADF01282CC7574C0095BE7C /* WatchConnectivityManagerWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF01272CC7574C0095BE7C /* WatchConnectivityManagerWatch.swift */; };
-		FADF012A2CC757570095BE7C /* WatchConnectivityManagerPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF01292CC757570095BE7C /* WatchConnectivityManagerPhone.swift */; };
-		FADF012C2CC7575D0095BE7C /* ContentViewPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF012B2CC7575D0095BE7C /* ContentViewPhone.swift */; };
+		FA4D00F42CC745F500B431B3 /* ContentViewPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D00F32CC745F500B431B3 /* ContentViewPhone.swift */; };
+		FA4D00F62CC7460300B431B3 /* ContentViewWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D00F52CC7460300B431B3 /* ContentViewWatch.swift */; };
+		FA4D00F82CC7461B00B431B3 /* WatchConnectivityManagerPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D00F72CC7461B00B431B3 /* WatchConnectivityManagerPhone.swift */; };
+		FA4D00FA2CC7462600B431B3 /* WatchConnectivityManagerWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D00F92CC7462600B431B3 /* WatchConnectivityManagerWatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,12 +98,12 @@
 		FA4D00D92CC7426C00B431B3 /* TryHeartRate_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryHeartRate_Watch_AppUITests.swift; sourceTree = "<group>"; };
 		FA4D00DB2CC7426C00B431B3 /* TryHeartRate_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryHeartRate_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FA4D00F22CC7427C00B431B3 /* TryHeartRate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TryHeartRate.entitlements; sourceTree = "<group>"; };
+		FA4D00F32CC745F500B431B3 /* ContentViewPhone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentViewPhone.swift; path = ../../../../Downloads/ContentViewPhone.swift; sourceTree = "<group>"; };
+		FA4D00F52CC7460300B431B3 /* ContentViewWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentViewWatch.swift; path = ../../../../Downloads/ContentViewWatch.swift; sourceTree = "<group>"; };
+		FA4D00F72CC7461B00B431B3 /* WatchConnectivityManagerPhone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchConnectivityManagerPhone.swift; path = ../../../../Downloads/WatchConnectivityManagerPhone.swift; sourceTree = "<group>"; };
+		FA4D00F92CC7462600B431B3 /* WatchConnectivityManagerWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchConnectivityManagerWatch.swift; path = ../../../../Downloads/WatchConnectivityManagerWatch.swift; sourceTree = "<group>"; };
 		FA4D00FB2CC74DEC00B431B3 /* TryHeartRate Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TryHeartRate Watch App.entitlements"; sourceTree = "<group>"; };
 		FA4D00FC2CC74EC900B431B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		FADF01252CC757420095BE7C /* ContentViewWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewWatch.swift; sourceTree = "<group>"; };
-		FADF01272CC7574C0095BE7C /* WatchConnectivityManagerWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchConnectivityManagerWatch.swift; sourceTree = "<group>"; };
-		FADF01292CC757570095BE7C /* WatchConnectivityManagerPhone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchConnectivityManagerPhone.swift; sourceTree = "<group>"; };
-		FADF012B2CC7575D0095BE7C /* ContentViewPhone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewPhone.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,9 +183,9 @@
 			children = (
 				FA4D00FC2CC74EC900B431B3 /* Info.plist */,
 				FA4D00F22CC7427C00B431B3 /* TryHeartRate.entitlements */,
-				FADF012B2CC7575D0095BE7C /* ContentViewPhone.swift */,
 				FA4D00962CC7426A00B431B3 /* TryHeartRateApp.swift */,
-				FADF01292CC757570095BE7C /* WatchConnectivityManagerPhone.swift */,
+				FA4D00F72CC7461B00B431B3 /* WatchConnectivityManagerPhone.swift */,
+				FA4D00F32CC745F500B431B3 /* ContentViewPhone.swift */,
 				FA4D009A2CC7426B00B431B3 /* Assets.xcassets */,
 				FA4D009C2CC7426B00B431B3 /* Preview Content */,
 			);
@@ -221,9 +221,9 @@
 			isa = PBXGroup;
 			children = (
 				FA4D00FB2CC74DEC00B431B3 /* TryHeartRate Watch App.entitlements */,
-				FADF01272CC7574C0095BE7C /* WatchConnectivityManagerWatch.swift */,
 				FA4D00BE2CC7426B00B431B3 /* TryHeartRateApp.swift */,
-				FADF01252CC757420095BE7C /* ContentViewWatch.swift */,
+				FA4D00F52CC7460300B431B3 /* ContentViewWatch.swift */,
+				FA4D00F92CC7462600B431B3 /* WatchConnectivityManagerWatch.swift */,
 				FA4D00C22CC7426C00B431B3 /* Assets.xcassets */,
 				FA4D00C42CC7426C00B431B3 /* Preview Content */,
 			);
@@ -477,9 +477,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA4D00F82CC7461B00B431B3 /* WatchConnectivityManagerPhone.swift in Sources */,
 				FA4D00972CC7426A00B431B3 /* TryHeartRateApp.swift in Sources */,
-				FADF012A2CC757570095BE7C /* WatchConnectivityManagerPhone.swift in Sources */,
-				FADF012C2CC7575D0095BE7C /* ContentViewPhone.swift in Sources */,
+				FA4D00F42CC745F500B431B3 /* ContentViewPhone.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,8 +504,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FADF01262CC757420095BE7C /* ContentViewWatch.swift in Sources */,
-				FADF01282CC7574C0095BE7C /* WatchConnectivityManagerWatch.swift in Sources */,
+				FA4D00F62CC7460300B431B3 /* ContentViewWatch.swift in Sources */,
+				FA4D00FA2CC7462600B431B3 /* WatchConnectivityManagerWatch.swift in Sources */,
 				FA4D00BF2CC7426B00B431B3 /* TryHeartRateApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
