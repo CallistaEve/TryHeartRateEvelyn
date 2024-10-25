@@ -26,7 +26,7 @@ struct ContentView: View {
             
             Button(connectivityManagerWatch.isSessionRunning ? "End Session" : "Start Session") {
                 if connectivityManagerWatch.isSessionRunning {
-                    endSession()
+                    stopSession()
                 } else {
                     startSession()
                 }
@@ -45,8 +45,8 @@ struct ContentView: View {
             connectivityManagerWatch.startSession()
         }
         
-        func endSession() {
-            connectivityManagerWatch.endSession()
+        func stopSession() {
+            connectivityManagerWatch.stopSession()
         }
         
         func startHeartRateMonitoring() {

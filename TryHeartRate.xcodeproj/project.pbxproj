@@ -24,6 +24,7 @@
 		FADF01282CC7574C0095BE7C /* WatchConnectivityManagerWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF01272CC7574C0095BE7C /* WatchConnectivityManagerWatch.swift */; };
 		FADF012A2CC757570095BE7C /* WatchConnectivityManagerPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF01292CC757570095BE7C /* WatchConnectivityManagerPhone.swift */; };
 		FADF012C2CC7575D0095BE7C /* ContentViewPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF012B2CC7575D0095BE7C /* ContentViewPhone.swift */; };
+		FADF01302CCB37E40095BE7C /* LineGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF012F2CCB37E40095BE7C /* LineGraphView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		FADF01272CC7574C0095BE7C /* WatchConnectivityManagerWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchConnectivityManagerWatch.swift; sourceTree = "<group>"; };
 		FADF01292CC757570095BE7C /* WatchConnectivityManagerPhone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchConnectivityManagerPhone.swift; sourceTree = "<group>"; };
 		FADF012B2CC7575D0095BE7C /* ContentViewPhone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewPhone.swift; sourceTree = "<group>"; };
+		FADF012F2CCB37E40095BE7C /* LineGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 				FA4D00FC2CC74EC900B431B3 /* Info.plist */,
 				FA4D00F22CC7427C00B431B3 /* TryHeartRate.entitlements */,
 				FADF012B2CC7575D0095BE7C /* ContentViewPhone.swift */,
+				FADF012F2CCB37E40095BE7C /* LineGraphView.swift */,
 				FA4D00962CC7426A00B431B3 /* TryHeartRateApp.swift */,
 				FADF01292CC757570095BE7C /* WatchConnectivityManagerPhone.swift */,
 				FA4D009A2CC7426B00B431B3 /* Assets.xcassets */,
@@ -480,6 +483,7 @@
 				FA4D00972CC7426A00B431B3 /* TryHeartRateApp.swift in Sources */,
 				FADF012A2CC757570095BE7C /* WatchConnectivityManagerPhone.swift in Sources */,
 				FADF012C2CC7575D0095BE7C /* ContentViewPhone.swift in Sources */,
+				FADF01302CCB37E40095BE7C /* LineGraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

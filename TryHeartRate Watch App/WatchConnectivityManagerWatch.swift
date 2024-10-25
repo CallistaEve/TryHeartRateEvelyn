@@ -12,8 +12,8 @@ import HealthKit
 class WatchConnectivityManagerWatch: NSObject, ObservableObject, WCSessionDelegate {
     
     @Published var currentHeartRate: Double = 0.0
-    
     @Published var isSessionRunning: Bool = false
+    
     @Published var elapsedTime: TimeInterval = 0
     @Published var timer: Timer?
     
@@ -47,10 +47,12 @@ class WatchConnectivityManagerWatch: NSObject, ObservableObject, WCSessionDelega
     // Sync elapsed time when starting or updating the session
     func startSession() {
         isSessionRunning = true
-        sendElapsedTimeUpdate()
+        startTimer(from: Date())
+        startHeartRateMonitoring()
+        sendMessage(["action": "start", "reset": true])
     }
 
-    func endSession() {
+    func stopSession() {
             isSessionRunning = false
             stopTimer()
             stopHeartRateMonitoring()
@@ -96,6 +98,7 @@ class WatchConnectivityManagerWatch: NSObject, ObservableObject, WCSessionDelega
         func stopHeartRateMonitoring() {
             if let query = heartRateQuery {
                 healthStore.stop(query)
+                print("Heart rate monitoring stopped")
             }
         }
 
@@ -131,8 +134,8 @@ class WatchConnectivityManagerWatch: NSObject, ObservableObject, WCSessionDelega
                     // Stop the timer and reset if needed
                     if let reset = message["reset"] as? Bool, reset {
                         self.elapsedTime = 0
+                        self.stopTimer()
                         self.stopHeartRateMonitoring()
-                        self.stopTimer() // Stop the local timer on watchOS
                     }
                 case "send":
                     self.isSessionRunning = true

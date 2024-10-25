@@ -7,6 +7,7 @@
 
 import SwiftUI
 import WatchConnectivity
+import Charts
 
 struct ContentView: View {
     
@@ -30,20 +31,26 @@ struct ContentView: View {
                             .disabled(true)
                     }
                     
-                    Section("Minimum Heart Rate") {
-                        TextField("Minimum", text: $minimumHeartRate)
-                            .disabled(true)
-                    }
-                    
-                    Section("Maximum Heart Rate") {
-                        TextField("Maximum", text: $maximumHeartRate)
-                            .disabled(true)
-                    }
-                    
-                    Section("Average Heart Rate") {
-                        TextField("Average", text: $averageHeartRate)
-                            .disabled(true)
-                    }
+                    //                    Section("Minimum Heart Rate") {
+                    //                        TextField("Minimum", text: $minimumHeartRate)
+                    //                            .disabled(true)
+                    //                    }
+                    //
+                    //                    Section("Maximum Heart Rate") {
+                    //                        TextField("Maximum", text: $maximumHeartRate)
+                    //                            .disabled(true)
+                    //                    }
+                    //
+                    //                    Section("Average Heart Rate") {
+                    //                        TextField("Average", text: $averageHeartRate)
+                    //                            .disabled(true)
+                    //                    }
+                    // Add the new heart rate to the data array
+                    if connectivityManagerPhone.isSessionEnded {
+                                    // Show the graph only after the session has ended
+                        LineGraphView(heartRateData: $connectivityManagerPhone.heartRateData)
+                                        .frame(height: 300)
+                                }
                     
                     Text(formatTime(connectivityManagerPhone.elapsedTime))
                         .font(.title)
@@ -60,6 +67,13 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("HR Test Session")
+            .onReceive(connectivityManagerPhone.$currentHeartRate) { newHeartRate in
+                        if connectivityManagerPhone.isSessionRunning {
+                            // Store the new heart rate in the array during the session
+                            let boundedHeartRate = min(max(newHeartRate, 50), 150)
+                            connectivityManagerPhone.heartRateData.append(boundedHeartRate)
+                        }
+                    }
             .onAppear {
                 // Observe heart rate updates from NotificationCenter
                 NotificationCenter.default.addObserver(forName: .heartRateUpdated, object: nil, queue: .main) { notification in
@@ -75,6 +89,10 @@ struct ContentView: View {
         connectivityManagerPhone.isSessionRunning = true
         currentHeartRate = 0.0
         startTimer(from: Date())
+        
+        connectivityManagerPhone.heartRateData = []
+        connectivityManagerPhone.isSessionEnded = false
+        
         connectivityManagerPhone.sendMessage(["action": "start", "elapsedTime": connectivityManagerPhone.elapsedTime])
     }
     
@@ -82,12 +100,16 @@ struct ContentView: View {
         connectivityManagerPhone.isSessionRunning = false
         connectivityManagerPhone.stopTimer()
         
+        connectivityManagerPhone.heartRateData = Array(connectivityManagerPhone.heartRateData)
+        connectivityManagerPhone.isSessionEnded = true
+        
         // Reset elapsed time
         connectivityManagerPhone.elapsedTime = 0
+        connectivityManagerPhone.stopSession()
         
         // Send end session and reset timer message to the other device
         let message = ["stopHeartRateMonitoring": true]
-            connectivityManagerPhone.sendMessage(message)
+        connectivityManagerPhone.sendMessage(message)
     }
     
     private func startTimer(from startDate: Date) {
@@ -110,6 +132,8 @@ struct ContentView: View {
         return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
 }
+
+
 
 #Preview {
     ContentView()

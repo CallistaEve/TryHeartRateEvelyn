@@ -11,6 +11,9 @@ import HealthKit
 
 class WatchConnectivityManagerPhone: NSObject, ObservableObject, WCSessionDelegate {
     
+    @Published var heartRateData: [Double] = []
+    @Published var isSessionEnded: Bool = false
+    
     @Published var currentHeartRate: Double = 0.0
     @Published var isSessionRunning: Bool = false
     @Published var elapsedTime: TimeInterval = 0
@@ -44,13 +47,20 @@ class WatchConnectivityManagerPhone: NSObject, ObservableObject, WCSessionDelega
     func startSession() {
         isSessionRunning = true
         sendElapsedTimeUpdate()
+        startTimer(from: Date())
+        
+        resetHeartRateData()
+        isSessionEnded = false
     }
     
     func stopSession() {
         isSessionRunning = false
         stopTimer()
+        elapsedTime = 0
         sendMessage(["action": "end", "reset": true])
-        print("iOS: End session message sent to watch")
+        
+        heartRateData = Array(heartRateData)
+        isSessionEnded = true
     }
     
     func sendElapsedTimeUpdate() {
@@ -71,7 +81,7 @@ class WatchConnectivityManagerPhone: NSObject, ObservableObject, WCSessionDelega
             if let action = message["action"] as? String {
                 switch action {
                 case "start":
-                    self.isSessionRunning = true
+                    self.startSession()
                     if let elapsedTime = message["elapsedTime"] as? TimeInterval {
                         self.elapsedTime = elapsedTime
                     }
@@ -81,7 +91,7 @@ class WatchConnectivityManagerPhone: NSObject, ObservableObject, WCSessionDelega
                         self.elapsedTime = elapsedTime
                     }
                 case "end":
-                    self.isSessionRunning = false
+                    self.stopSession()
                     if let reset = message["reset"] as? Bool, reset {
                         self.elapsedTime = 0
                         self.stopTimer()
@@ -95,6 +105,9 @@ class WatchConnectivityManagerPhone: NSObject, ObservableObject, WCSessionDelega
                     break
                 }
             }
+            if let startSession = message["startSession"] as? Bool, startSession {
+                self.startSessionOnPhone()
+                }
             if let heartRate = message["currentHeartRate"] as? Double {
                 DispatchQueue.main.async {
                     self.currentHeartRate = heartRate
@@ -105,6 +118,23 @@ class WatchConnectivityManagerPhone: NSObject, ObservableObject, WCSessionDelega
             }
         }
     }
+    
+    private func resetHeartRateData() {
+            // Logic to reset heart rate data, handled in ContentViewPhone
+            NotificationCenter.default.post(name: Notification.Name("resetHeartRateData"), object: nil)
+        }
+    
+    func startSessionOnPhone() {
+        isSessionRunning = true
+        startTimer(from: Date())
+    }
+    
+    func startTimer(from startTime: Date) {
+            elapsedTime = 0
+            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+                self.elapsedTime = Date().timeIntervalSince(startTime)
+            }
+        }
 
     func stopTimer() {
         print("iOS: Stopping timer") // Log timer stop action
