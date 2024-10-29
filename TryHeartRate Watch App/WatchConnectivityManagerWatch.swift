@@ -17,6 +17,7 @@ class WatchConnectivityManagerWatch: NSObject, ObservableObject, WCSessionDelega
     @Published var elapsedTime: TimeInterval = 0
     @Published var timer: Timer?
     
+    private var count: Int = 0
     private var healthStore = HKHealthStore()
     private var heartRateQuery: HKQuery?
     
@@ -177,6 +178,8 @@ class WatchConnectivityManagerWatch: NSObject, ObservableObject, WCSessionDelega
             sendHeartRateToPhone(currentHeartRate: currentHeartRate) // Send the updated heart rate
             DispatchQueue.main.async {
                 print("Heart Rate: \(self.currentHeartRate)")
+                print("Count: \(self.count)")
+                self.count += 1
             }
         }
     }
