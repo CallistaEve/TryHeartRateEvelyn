@@ -3,30 +3,60 @@ import Charts
 
 struct LineGraphView: View {
     @Binding var heartRateData: [Double]  // Data for the graph
+    @State private var selectedDataIndex: Int? = nil  // Track selected point index
     
     var body: some View {
-        Chart {
-            if !heartRateData.isEmpty {
-                ForEach(Array(heartRateData.enumerated()), id: \.offset) { index, value in
-                    LineMark(
-                        x: .value("Time", index),
-                        y: .value("Heart Rate", value)
-                    )
-                    .foregroundStyle(Color.red)  // Set line color to red
-                    .lineStyle(StrokeStyle(lineWidth: 2))
+        ZStack {
+            Chart {
+                if !heartRateData.isEmpty {
+                    ForEach(Array(heartRateData.enumerated()), id: \.offset) { index, value in
+                        LineMark(
+                            x: .value("Time", index),
+                            y: .value("Heart Rate", value)
+                        )
+                        .foregroundStyle(Color.red)
+                        .lineStyle(StrokeStyle(lineWidth: 2))
+                    }
+                }
+            }
+            .chartYAxis {
+                AxisMarks(position: .leading)
+            }
+            .chartXScale(domain: 0...(heartRateData.count > 1 ? heartRateData.count - 1 : 1))
+            .chartYScale(domain: (heartRateData.min() ?? 50) - 10...((heartRateData.max() ?? 50) + 10))
+            .frame(width: UIScreen.main.bounds.width * 0.95, height: 250)
+            .gesture(
+                DragGesture()
+                    .onChanged { value in
+                        // Calculate the nearest point
+                        let touchX = value.location.x / (UIScreen.main.bounds.width * 0.95) * CGFloat(heartRateData.count - 1)
+                        selectedDataIndex = Int(round(touchX))
+                    }
+                    .onEnded { _ in
+                        // Optional: Reset selection after interaction
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            selectedDataIndex = nil
+                        }
+                    }
+            )
+            
+            // Tooltip Overlay
+            if let index = selectedDataIndex, index < heartRateData.count {
+                VStack {
+                    Text("Heart Rate: \(heartRateData[index], specifier: "%.1f")")
+                        .font(.caption)
+                        .padding(5)
+                        .background(Color.black.opacity(0.75))
+                        .foregroundColor(.white)
+                        .cornerRadius(5)
+                        .position(x: CGFloat(index) / CGFloat(heartRateData.count - 1) * UIScreen.main.bounds.width * 0.95,
+                                  y: 30)  // Adjust Y position as needed
                 }
             }
         }
-        .chartYAxis {
-            AxisMarks(position: .leading)
-        }
-        .chartXScale(domain: 0...(heartRateData.count > 1 ? heartRateData.count - 1 : 1))
-        .chartYScale(domain: (heartRateData.min() ?? 50) - 10...((heartRateData.max() ?? 50) + 10))
-        .frame(width: UIScreen.main.bounds.width * 0.95, height: 250) // Width 95% of screen, fixed height
-        .padding(.leading, 20) // Added padding on the left to prevent Y-axis label cutoff
-        .padding(.horizontal, 10) // Reduced padding for other sides
     }
 }
+
 
 
 
