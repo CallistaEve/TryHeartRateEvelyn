@@ -24,6 +24,8 @@ struct LineGraphView: View {
             }
             .chartXScale(domain: 0...(heartRateData.count > 1 ? heartRateData.count - 1 : 1))
             .chartYScale(domain: (heartRateData.min() ?? 50) - 10...((heartRateData.max() ?? 50) + 10))
+            .padding(.leading, 16)  // Add padding to the left
+            .padding(.trailing, 16) // Optional: Add padding to the right for symmetry
             .frame(width: UIScreen.main.bounds.width * 0.95, height: 250)
             .gesture(
                 DragGesture()
