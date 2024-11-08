@@ -18,11 +18,15 @@ struct ContentView: View {
     @State private var heartRateQuery: HKQuery?
     
     var body: some View {
-        VStack {
-            Text(formatTime(connectivityManagerWatch.elapsedTime))
+        VStack{
+//            Text(formatTime(connectivityManagerWatch.elapsedTime))
             
-            Text("Heart Rate: \(connectivityManagerWatch.currentHeartRate) bpm")
-                .padding(.bottom, 20)
+            VStack(alignment: .center) {
+                Text("Heart Rate:")
+                    .bold()
+                Text("\(connectivityManagerWatch.currentHeartRate) bpm")
+                    .padding(.bottom, 20)
+            }
             
             Button(connectivityManagerWatch.isSessionRunning ? "End Session" : "Start Session") {
                 if connectivityManagerWatch.isSessionRunning {
@@ -31,6 +35,8 @@ struct ContentView: View {
                     startSession()
                 }
             }
+            .background(connectivityManagerWatch.isSessionRunning ? Color.red : Color.green)
+            .cornerRadius(24)
         }
         .onAppear {
             requestAuthorization()
