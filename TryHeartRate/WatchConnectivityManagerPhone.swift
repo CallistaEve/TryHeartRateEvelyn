@@ -12,8 +12,6 @@ import HealthKit
 class WatchConnectivityManagerPhone: NSObject, ObservableObject, WCSessionDelegate {
     
     @Published var heartRateData: [Double] = []
-    @Published var isSessionEnded: Bool = false
-    
     @Published var currentHeartRate: Double = 0.0
     @Published var isSessionRunning: Bool = false
     @Published var elapsedTime: TimeInterval = 0
@@ -50,7 +48,6 @@ class WatchConnectivityManagerPhone: NSObject, ObservableObject, WCSessionDelega
         startTimer(from: Date())
         
         resetHeartRateData()
-        isSessionEnded = false
     }
     
     func stopSession() {
@@ -60,7 +57,6 @@ class WatchConnectivityManagerPhone: NSObject, ObservableObject, WCSessionDelega
         sendMessage(["action": "end", "reset": true])
         
         heartRateData = Array(heartRateData)
-        isSessionEnded = true
     }
     
     func sendElapsedTimeUpdate() {

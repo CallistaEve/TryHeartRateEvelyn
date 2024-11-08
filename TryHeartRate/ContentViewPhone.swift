@@ -30,23 +30,7 @@ struct ContentView: View {
                         Text("\(connectivityManagerPhone.currentHeartRate, specifier: "%.2f") bpm")
                             .disabled(true)
                     }
-                    
-                    //                    Section("Minimum Heart Rate") {
-                    //                        TextField("Minimum", text: $minimumHeartRate)
-                    //                            .disabled(true)
-                    //                    }
-                    //
-                    //                    Section("Maximum Heart Rate") {
-                    //                        TextField("Maximum", text: $maximumHeartRate)
-                    //                            .disabled(true)
-                    //                    }
-                    //
-                    //                    Section("Average Heart Rate") {
-                    //                        TextField("Average", text: $averageHeartRate)
-                    //                            .disabled(true)
-                    //                    }
-                    // Add the new heart rate to the data array
-                    if connectivityManagerPhone.isSessionEnded {
+                    if connectivityManagerPhone.isSessionRunning == false {
                                     // Show the graph only after the session has ended
                         LineGraphView(heartRateData: $connectivityManagerPhone.heartRateData)
                                         .frame(height: 300)
@@ -91,7 +75,6 @@ struct ContentView: View {
         startTimer(from: Date())
         
         connectivityManagerPhone.heartRateData = []
-        connectivityManagerPhone.isSessionEnded = false
         
         connectivityManagerPhone.sendMessage(["action": "start", "elapsedTime": connectivityManagerPhone.elapsedTime])
     }
@@ -101,7 +84,6 @@ struct ContentView: View {
         connectivityManagerPhone.stopTimer()
         
         connectivityManagerPhone.heartRateData = Array(connectivityManagerPhone.heartRateData)
-        connectivityManagerPhone.isSessionEnded = true
         
         // Reset elapsed time
         connectivityManagerPhone.elapsedTime = 0
